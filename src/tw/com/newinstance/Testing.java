@@ -55,7 +55,6 @@ public class Testing {
 				Object obj = getInstance(classPath);
 				System.out.println(obj);
 			} catch (Exception e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
