@@ -1,5 +1,7 @@
 package tw.com.reflection;
 
+import javax.sound.midi.MidiDevice.Info;
+
 public class Person {
 	private String name;
 	public int age;
@@ -43,6 +45,9 @@ public class Person {
 		return nation;
 	}
 
+	public static void info(){
+		System.out.println("一個沒事做的普通人");
+	}
 	@Override
 	public String toString() {
 		return "Person [name=" + name + ", age=" + age + "]";

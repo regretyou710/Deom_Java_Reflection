@@ -61,6 +61,11 @@ public class Testing {
 		// showNation.invoke(p2, "台灣");
 		String str = (String) showNation.invoke(p2, "台灣");
 		System.out.println(str);
+		
+		//調用靜態方法
+		Method info = clazz.getDeclaredMethod("info");
+		info.setAccessible(true);
+		info.invoke(Person.class);//靜態方法在類的加載過程就被設置並初始化，所以依附在運行時類的身上而不是運行時類的物件
 	}
 
 	// 獲取Class實例的方式
