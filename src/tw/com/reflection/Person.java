@@ -1,7 +1,5 @@
 package tw.com.reflection;
 
-import javax.sound.midi.MidiDevice.Info;
-
 public class Person {
 	private String name;
 	public int age;
