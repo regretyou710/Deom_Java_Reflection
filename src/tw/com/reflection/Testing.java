@@ -21,7 +21,8 @@ public class Testing {
 	// 反射之後，對於Person的操作
 	@Test
 	public void test2() throws Exception {
-		// getFields()只能獲取此類public修飾的欄位，而getDeclaredFields()獲取此類所有的欄位，不管是私有還是公有。
+		// getFields():獲取當前運行時類及其父類中聲明為public的欄位。
+		// getDeclaredFields():獲取當前運行時類中聲明的所有的欄位(不包含父類中聲明的欄位)。
 
 		// 透過反射，創建Person物件
 		Class clazz = Person.class;
@@ -61,11 +62,11 @@ public class Testing {
 		// showNation.invoke(p2, "台灣");
 		String str = (String) showNation.invoke(p2, "台灣");
 		System.out.println(str);
-		
-		//調用靜態方法
+
+		// 調用靜態方法
 		Method info = clazz.getDeclaredMethod("info");
 		info.setAccessible(true);
-		info.invoke(Person.class);//靜態方法在類的加載過程就被設置並初始化，所以依附在運行時類的身上而不是運行時類的物件
+		info.invoke(Person.class);// info.invoke(clazz);靜態方法在類的加載過程就被設置並初始化，所以依附在運行時類的身上而不是運行時類的物件
 	}
 
 	// 獲取Class實例的方式
